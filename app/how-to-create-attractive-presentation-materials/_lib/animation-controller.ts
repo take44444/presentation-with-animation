@@ -319,18 +319,18 @@ export function createPresentationController(
         const shakeLoop: gsap.core.Timeline = gsap
           .timeline({ paused: true, repeat: -1 })
           .to(shakes.length ? shakes : {}, {
-            rotation: 0.6,
-            duration: 1.5,
+            rotation: 2.0,
+            duration: 0.3,
             ease: 'sine.inOut',
           })
           .to(shakes.length ? shakes : {}, {
-            rotation: -0.6,
-            duration: 1.5,
+            rotation: -2.0,
+            duration: 0.3,
             ease: 'sine.inOut',
           })
           .to(shakes.length ? shakes : {}, {
             rotation: 0,
-            duration: 1.5,
+            duration: 0.3,
             ease: 'sine.inOut',
           });
         if (!reduced && examples) {

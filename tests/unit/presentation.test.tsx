@@ -15,6 +15,9 @@ test('semantic Japanese opening and decorative cue', (): void => {
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
     '惹きつけるプレゼン資料の作り方',
   );
+  expect(screen.getByRole('heading', { level: 1 })).toHaveAccessibleName(
+    '惹きつけるプレゼン資料の作り方',
+  );
   expect(screen.getByText('Takeshi Masumoto')).toBeInTheDocument();
   expect(screen.getByText('2026-10-03')).toBeInTheDocument();
   expect(

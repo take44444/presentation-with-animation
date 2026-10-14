@@ -1,5 +1,79 @@
 import { test, expect, type Locator, type Page } from '@playwright/test';
 const route: string = '/how-to-create-attractive-presentation-materials';
+test('title wraps at the preferred Japanese phrase boundaries', async ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> => {
+  await page.goto(route);
+  await expect(page.locator('[data-cue]')).toHaveCSS('opacity', '1');
+  await expect(page.locator('h1')).toHaveAccessibleName(
+    '惹きつけるプレゼン資料の作り方',
+  );
+  const cases: readonly {
+    selector: string;
+    width: number;
+    lines: readonly string[];
+  }[] = [
+    { selector: 'h1', width: 640, lines: ['惹きつけるプレゼン資料の作り方'] },
+    {
+      selector: 'h1',
+      width: 480,
+      lines: ['惹きつける', 'プレゼン資料の作り方'],
+    },
+    {
+      selector: 'h1',
+      width: 320,
+      lines: ['惹きつける', 'プレゼン資料の', '作り方'],
+    },
+    {
+      selector: '[data-motion="explanation"] h2',
+      width: 640,
+      lines: ['きれいなスライドはセンス？'],
+    },
+    {
+      selector: '[data-motion="explanation"] h2',
+      width: 400,
+      lines: ['きれいなスライドは', 'センス？'],
+    },
+  ];
+  for (let index: number = 0; index < cases.length; index++) {
+    const lines: string[] = await page
+      .locator(cases[index].selector)
+      .evaluate((heading: HTMLElement, width: number): string[] => {
+        heading.style.width = `${width}px`;
+        heading.style.maxWidth = 'none';
+        heading.style.fontSize = '40px';
+        const walker: TreeWalker = document.createTreeWalker(
+          heading,
+          NodeFilter.SHOW_TEXT,
+        );
+        const observed: { top: number; text: string }[] = [];
+        let node: Node | null = walker.nextNode();
+        while (node) {
+          const text: string = node.textContent ?? '';
+          for (let offset: number = 0; offset < text.length; offset++) {
+            const range: Range = document.createRange();
+            range.setStart(node, offset);
+            range.setEnd(node, offset + 1);
+            const top: number = range.getBoundingClientRect().top;
+            const line: { top: number; text: string } | undefined =
+              observed.find(
+                (entry: { top: number; text: string }): boolean =>
+                  Math.abs(entry.top - top) < 1,
+              );
+            if (line) line.text += text[offset];
+            else observed.push({ top, text: text[offset] });
+          }
+          node = walker.nextNode();
+        }
+        return observed.map(
+          (line: { top: number; text: string }): string => line.text,
+        );
+      }, cases[index].width);
+    expect(lines).toEqual(cases[index].lines);
+  }
+});
 test('US1 exact opening, native early handoff, cue and title exit', async ({
   page,
 }: {

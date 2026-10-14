@@ -29,34 +29,34 @@ export function ExampleDesigns(): ReactElement {
                   <>
                     <span className={styles.miniLabel}>LESS IS MORE</span>
                     <strong>
-                      伝えたいことを、
+                      デザインはセンスじゃない
                       <br />
-                      ひとつに。
+                      学問だ
                     </strong>
                     <span className={styles.miniRule} />
                     <span className={styles.miniFoot}>
-                      余白が、メッセージを引き立てる。
+                      学べば，デザインは上達する。
                     </span>
                   </>
                 ) : (
                   <>
                     <span className={styles.miniLabel}>MAKE IT CLEAR</span>
-                    <strong>3つで、伝わる。</strong>
+                    <strong>たった3つで、変わる。</strong>
                     <div className={styles.miniPoints}>
                       <span>
                         01
                         <br />
-                        シンプル
+                        デザイン，配色
                       </span>
                       <span>
                         02
                         <br />
-                        印象的
+                        ストーリーを意識
                       </span>
                       <span>
                         03
                         <br />
-                        ストーリー
+                        流行を知る
                       </span>
                     </div>
                   </>

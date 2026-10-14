@@ -171,6 +171,32 @@ test('US2 explanation precedes staggered examples and pair persists through prin
       ),
     ),
   ).toBe(1);
+  const shakes: HTMLElement[] = Array.from(
+    root.querySelectorAll<HTMLElement>('[data-example-shake]'),
+  );
+  const shakeLoop: gsap.core.Animation | undefined = gsap.globalTimeline
+    .getChildren(true, false, true)
+    .find(
+      (entry: gsap.core.Animation): boolean =>
+        entry instanceof gsap.core.Timeline &&
+        entry
+          .getChildren(false, true, false)
+          .some(
+            (child: gsap.core.Animation): boolean =>
+              child instanceof gsap.core.Tween &&
+              child.targets().includes(shakes[0]),
+          ),
+    );
+  if (!(shakeLoop instanceof gsap.core.Timeline)) {
+    throw new Error('Missing shared shake timeline');
+  }
+  shakeLoop.pause();
+  [2, -2, 0].forEach((rotation: number, index: number): void => {
+    shakeLoop.totalTime((index + 1) * 0.3);
+    shakes.forEach((shake: HTMLElement): void => {
+      expect(Number(gsap.getProperty(shake, 'rotation'))).toBeCloseTo(rotation);
+    });
+  });
   const node: Element | null = root.querySelector('[data-example]');
   timeline.time(8);
   expect(root.querySelector('[data-example]')).toBe(node);

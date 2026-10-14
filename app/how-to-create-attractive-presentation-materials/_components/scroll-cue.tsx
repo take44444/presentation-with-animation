@@ -7,7 +7,7 @@ export function ScrollCue(): ReactElement {
     <div data-cue className={styles.cue}>
       <div data-cue-bob>
         <span>Scroll</span>
-        <ChevronDown size={20} strokeWidth={1.5} aria-hidden="true" />
+        <ChevronDown size={32} strokeWidth={1.5} aria-hidden="true" />
       </div>
     </div>
   );

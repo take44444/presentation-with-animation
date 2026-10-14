@@ -63,6 +63,28 @@ test('inactive pinned scenes are inert, cue avoids text and enlarged copy choose
     /pinned|flow/,
   );
   await expect(page.locator('[data-cue]')).toHaveCSS('opacity', '1');
+  await expect(page.locator('[data-cue] span')).toHaveCSS('font-size', '18px');
+  await expect(page.locator('[data-cue] svg')).toHaveCSS('width', '32px');
+  await expect(page.locator('[data-cue] svg')).toHaveCSS('height', '32px');
+  expect(
+    await page.locator('[data-cue]').evaluate((cue: HTMLElement): boolean => {
+      const bounds: DOMRect = cue.getBoundingClientRect();
+      const title: DOMRect | undefined = document
+        .querySelector('[data-motion="title"]')
+        ?.getBoundingClientRect();
+      return (
+        bounds.left >= 0 &&
+        bounds.top >= 0 &&
+        bounds.right <= innerWidth &&
+        bounds.bottom <= innerHeight &&
+        !!title &&
+        (bounds.left >= title.right ||
+          bounds.right <= title.left ||
+          bounds.top >= title.bottom ||
+          bounds.bottom <= title.top)
+      );
+    }),
+  ).toBe(true);
   if ((await page.locator('main').getAttribute('data-mode')) === 'pinned') {
     await expect(page.locator('[data-scene="tips"]')).toHaveAttribute(
       'aria-hidden',
