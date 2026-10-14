@@ -51,7 +51,7 @@ test.each([
   "const x: LayoutMode = 'grid';",
   "const x: MotionPreference = 'fast';",
   "const x: ScrollDirection = 'up';",
-  "declare const p: Presentation; p.title = 'changed';",
+  "declare const p: Presentation; p.title = '惹きつけるプレゼン資料の作り方';",
   'declare const p: Presentation; p.slides.push(p.slides[0]);',
   "const x: Slide = {id:'title',kind:'tips',order:1};",
   "const x: Slide = {id:'principles',kind:'principles',order:3,phrases:['a','b']};",

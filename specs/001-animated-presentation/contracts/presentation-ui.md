@@ -22,14 +22,14 @@
 
 ## Normal-Motion Behavior
 
-| Scene/element | Entrance/visible behavior | Exit/continuity |
-| --- | --- | --- |
-| Title | Title first, presenter/date next; fade/up | Forward fade/up; restored smoothly backward |
-| Cue | Fade after opening content; vertical Scroll + ChevronDown; repeating pair of subtle bobs | Stable through title/explanation/principles; fade out toward tips; restored backward |
-| Explanation text | Fade/up; exact two sentences | Forward fade/up; backward fade/down |
-| Shared examples | Enter after explanation; sequential fade/rotation; overlap and slight tilt; bounded subtle child shake | One pair persists unchanged through explanation/principles in both directions; leaves outside that range |
-| Principles | Only three separate phrases; fade/up | Forward fade/up toward tips; backward fade/down toward explanation |
-| Tips | Six cards fade/zoom with gentle elastic settling, row-major stagger | Outer scene wrapper allows fade/down when returning to principles |
+| Scene/element    | Entrance/visible behavior                                                                              | Exit/continuity                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| Title            | Title first, presenter/date next; fade/up                                                              | Forward fade/up; restored smoothly backward                                                              |
+| Cue              | Fade after opening content; vertical Scroll + ChevronDown; repeating pair of subtle bobs               | Stable through title/explanation/principles; fade out toward tips; restored backward                     |
+| Explanation text | Fade/up; exact two sentences                                                                           | Forward fade/up; backward fade/down                                                                      |
+| Shared examples  | Enter after explanation; sequential fade/rotation; overlap and slight tilt; bounded subtle child shake | One pair persists unchanged through explanation/principles in both directions; leaves outside that range |
+| Principles       | Only three separate phrases; fade/up                                                                   | Forward fade/up toward tips; backward fade/down toward explanation                                       |
+| Tips             | Six cards fade/zoom with gentle elastic settling, row-major stagger                                    | Outer scene wrapper allows fade/down when returning to principles                                        |
 
 Fading and ordinary travel use smooth easing; card settling uses a restrained elastic effect. Entrances, exits, and decorative children have separate property ownership. Returning to a settled scene restores its first-visit composition without duplicated content or accumulated transforms.
 
@@ -52,15 +52,15 @@ Fading and ordinary travel use smooth easing; card settling uses a restrained el
 
 Use accessible roles/text for content assertions. Stable internal scene/card/example identifiers may support geometry and DOM-identity checks; they are testing hooks, not visible implementation controls. Browser validation must examine computed opacity/transforms and visible bounds as well as element presence, because DOM existence alone does not establish visual visibility.
 
-| Outcome | Required evidence |
-| --- | --- |
-| Exact content and order | All four scenes and six card pairs match the specification |
-| Opening/stagger order | Sample real rendered changes and show title before attribution, text before examples, cards in row-major order |
-| Shared continuity | Same two DOM nodes throughout both explanation/principles directions; no parent disappearance or arrangement reset |
-| Reverse behavior | All three reverse paths show downward outgoing movement and correct restoration |
-| Reliability | Six adjacent paths and twenty round trips, plus fast reversals, end overshoot, and resize/preference changes |
-| Responsive usability | Specified desktop grids; all narrow-screen content reachable; no overlap/horizontal overflow |
-| Reduced motion | All content/paths retained with decorative transforms and loops absent |
+| Outcome                 | Required evidence                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Exact content and order | All four scenes and six card pairs match the specification                                                         |
+| Opening/stagger order   | Sample real rendered changes and show title before attribution, text before examples, cards in row-major order     |
+| Shared continuity       | Same two DOM nodes throughout both explanation/principles directions; no parent disappearance or arrangement reset |
+| Reverse behavior        | All three reverse paths show downward outgoing movement and correct restoration                                    |
+| Reliability             | Six adjacent paths and twenty round trips, plus fast reversals, end overshoot, and resize/preference changes       |
+| Responsive usability    | Specified desktop grids; all narrow-screen content reachable; no overlap/horizontal overflow                       |
+| Reduced motion          | All content/paths retained with decorative transforms and loops absent                                             |
 
 ## Out of Scope
 

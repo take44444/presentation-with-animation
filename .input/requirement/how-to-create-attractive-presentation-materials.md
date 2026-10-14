@@ -21,8 +21,8 @@ This feature implements presentation which incorporates smooth animations and in
   - This indication should be displayed throughout the whole presentation.
     - It should not disappear when transitioning between slides.
     - It should disappear when the presentation ends.
--  When transitioning to the next slide, the title slide should smoothly fade out and slide up.
-  -  The transition should use smooth easing functions, such as `ease-in-out`.
+- When transitioning to the next slide, the title slide should smoothly fade out and slide up.
+- The transition should use smooth easing functions, such as `ease-in-out`.
 
 ### 2. きれいなスライドはセンス？
 
@@ -65,7 +65,7 @@ This feature implements presentation which incorporates smooth animations and in
     ```
 - The right section should not be updated. It should remain as it was in the previous slide.
 - When transitioning to the next slide, the third slide should smoothly fade out and slide up.
-  -  The transition should use smooth easing functions, such as `ease-in-out`.
+  - The transition should use smooth easing functions, such as `ease-in-out`.
 
 ### 4. その他のTips
 

@@ -7,8 +7,15 @@ export default createJestConfig({
     '<rootDir>/tests/unit/**/*.test.[jt]s?(x)',
     '<rootDir>/tests/unit/**/*.test.mjs',
   ],
-  moduleNameMapper: { '^@/(.*)$': '<rootDir>/$1' },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+    '^gsap/ScrollTrigger$': 'gsap/dist/ScrollTrigger',
+  },
   coverageProvider: 'v8',
-  collectCoverageFrom: ['app/**/*.{ts,tsx}', '!app/**/*.d.ts'],
+  collectCoverageFrom: [
+    'app/**/*.{ts,tsx}',
+    '!app/**/*.d.ts',
+    '!app/how-to-create-attractive-presentation-materials/_lib/types.ts',
+  ],
   coverageReporters: ['text', 'json-summary', 'lcov'],
 });

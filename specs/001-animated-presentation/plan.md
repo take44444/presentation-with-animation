@@ -32,15 +32,15 @@ Research decisions and primary-source references are recorded in [research.md](r
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-| Principle | Pre-research assessment | Post-design assessment and required evidence |
-| --- | --- | --- |
-| I. Test-driven development | PASS: behavior requirements and acceptance scenarios exist before code | PASS by design: tooling first; intended failing behavior tests precede each implementation slice; record red/green commands and outcomes |
-| II. Enforced quality gates | PASS: missing tools are identified and planned, with no exemption | PASS by design: ESLint, Prettier, typecheck, all Jest/E2E tests, production build, and ≥80% lines in every changed application file; retain coverage scope/reports |
-| III. Explicit types and Google style | PASS: prescribed TypeScript retained | PASS by design: explicit variables, bindings, parameters, returns, and members; no `any`; tested ESLint enforcement plus style review; normalize existing scaffold where necessary |
-| IV. Public API documentation | PASS: documentation required for authored public contracts | PASS by design: document exported components, functions, interfaces/classes, parameters, return values, side effects, and constraints; enforce presence and review completeness |
-| V. Prescribed architecture | PASS: Next App Router, GSAP, ScrollTrigger retained | PASS: route boundary, scoped GSAP ownership, lifecycle cleanup, and responsive media conditions are specified |
+| Principle                            | Pre-research assessment                                                | Post-design assessment and required evidence                                                                                                                                       |
+| ------------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| I. Test-driven development           | PASS: behavior requirements and acceptance scenarios exist before code | PASS by design: tooling first; intended failing behavior tests precede each implementation slice; record red/green commands and outcomes                                           |
+| II. Enforced quality gates           | PASS: missing tools are identified and planned, with no exemption      | PASS by design: ESLint, Prettier, typecheck, all Jest/E2E tests, production build, and ≥80% lines in every changed application file; retain coverage scope/reports                 |
+| III. Explicit types and Google style | PASS: prescribed TypeScript retained                                   | PASS by design: explicit variables, bindings, parameters, returns, and members; no `any`; tested ESLint enforcement plus style review; normalize existing scaffold where necessary |
+| IV. Public API documentation         | PASS: documentation required for authored public contracts             | PASS by design: document exported components, functions, interfaces/classes, parameters, return values, side effects, and constraints; enforce presence and review completeness    |
+| V. Prescribed architecture           | PASS: Next App Router, GSAP, ScrollTrigger retained                    | PASS: route boundary, scoped GSAP ownership, lifecycle cleanup, and responsive media conditions are specified                                                                      |
 
 No constitutional violation or amendment is proposed. These are planning gates, not claims that application quality gates have already run. Implementation acceptance is blocked until the required tools, tests, coverage, and review evidence are complete.
 
@@ -144,14 +144,14 @@ Reduced-motion mode uses unpinned document flow and immediately visible content,
 5. Verify production layout, all six adjacent transitions, twenty round trips, fast reversal, refresh/media rebuild, and route unmount/remount. Record real motion samples rather than inferring pixels from unit mocks.
 6. Run all required quality commands and per-file coverage checks, then collect the viewer-study and animation-review evidence in [quickstart.md](quickstart.md). Passing automation does not replace SC-002 or SC-005.
 
-| Requirements/outcomes | Primary validation |
-| --- | --- |
-| FR-001–FR-003, FR-008, FR-011–FR-013; SC-001 | Content/component tests and route/browser rendered-copy checks |
+| Requirements/outcomes                                      | Primary validation                                                                                                          |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| FR-001–FR-003, FR-008, FR-011–FR-013; SC-001               | Content/component tests and route/browser rendered-copy checks                                                              |
 | FR-004–FR-007, FR-009–FR-010, FR-014–FR-016; SC-003–SC-004 | Controller/model tests plus real browser frame/state samples, shared-node identity, six transitions, and twenty round trips |
-| FR-017; SC-006 | Bounds/reachability checks at the three specified viewports, with short-screen and resize cases |
-| FR-018; SC-007 | Reduced-motion preference and runtime preference-change tests |
-| FR-019 | Self-contained mini-slide content tested without optional styling/assets |
-| SC-002, SC-005 | Ten-viewer task study and five-viewer readability/comfort review |
+| FR-017; SC-006                                             | Bounds/reachability checks at the three specified viewports, with short-screen and resize cases                             |
+| FR-018; SC-007                                             | Reduced-motion preference and runtime preference-change tests                                                               |
+| FR-019                                                     | Self-contained mini-slide content tested without optional styling/assets                                                    |
+| SC-002, SC-005                                             | Ten-viewer task study and five-viewer readability/comfort review                                                            |
 
 Coverage includes every executable feature application file, not only pure helpers, plus any changed shared application files. Record the commit preceding implementation as the comparison base. The coverage validator must fail for a missing file, missing base, or any file below 80% lines; no broad controller/component exclusion is allowed.
 

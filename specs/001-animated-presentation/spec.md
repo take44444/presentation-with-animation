@@ -8,7 +8,7 @@
 
 **Input**: User description: "Create spec from the requirements in .input/requirement/how-to-create-attractive-presentation-materials.md. You don't need create a new branch. It is already created."
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Enter the Presentation (Priority: P1)
 
@@ -88,7 +88,7 @@ As a viewer, I scroll backward to review earlier material, with coherent reverse
 - **Reduced-motion preference**: Every slide and navigation path MUST remain available; repeating bobs and shaking, travel, rotation, and elastic effects MUST be suppressed in favor of immediate changes or simple fades.
 - **Unavailable example artwork**: Two readable simplified visual examples MUST still be shown rather than broken-image symbols or empty illustration space.
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -143,16 +143,16 @@ Left-section content, with no additional explanatory text:
 
 **Slide 4 — その他のTips**
 
-| Order | Title | Content |
-| --- | --- | --- |
-| 1 | 自分の目を肥やす | Webサイトやアプリ，ゲーム等，様々なデザインに触れる |
-| 2 | 流行を掴む | デザインのベストプラクティスは固定的ではなく，トレンドに応じて変化する |
-| 3 | 与えたい印象から配色を決める | スライドで与えたい印象に合わせて配色を選ぶ |
-| 4 | 重要なことだけを書く | スライドには本当に伝えたいことだけを記載し，あとは口頭で補足する |
-| 5 | ポイントは3つが丁度良い | 人は情報が4つ以上になると記憶しづらくなるため，重要なポイントは3つに絞る |
-| 6 | 示したポイント間で内容を被らせない | 内容が重複すると，オーバーに表現しようとしていると見えることがある |
+| Order | Title                              | Content                                                                  |
+| ----- | ---------------------------------- | ------------------------------------------------------------------------ |
+| 1     | 自分の目を肥やす                   | Webサイトやアプリ，ゲーム等，様々なデザインに触れる                      |
+| 2     | 流行を掴む                         | デザインのベストプラクティスは固定的ではなく，トレンドに応じて変化する   |
+| 3     | 与えたい印象から配色を決める       | スライドで与えたい印象に合わせて配色を選ぶ                               |
+| 4     | 重要なことだけを書く               | スライドには本当に伝えたいことだけを記載し，あとは口頭で補足する         |
+| 5     | ポイントは3つが丁度良い            | 人は情報が4つ以上になると記憶しづらくなるため，重要なポイントは3つに絞る |
+| 6     | 示したポイント間で内容を被らせない | 内容が重複すると，オーバーに表現しようとしていると見えることがある       |
 
-### Key Entities *(include if feature involves data)*
+### Key Entities _(include if feature involves data)_
 
 - **Presentation**: The fixed educational experience, identified by its route, title, presenter, date, and ordered set of four slides.
 - **Slide**: One scene's content, display order, layout, entrance/exit behavior, and relationship to any shared visual material.
@@ -160,7 +160,7 @@ Left-section content, with no additional explanatory text:
 - **Tip Card**: One of six ordered advice items, each with a title and explanatory content.
 - **Scroll Cue**: The presentation-wide prompt, with label, chevron, repeating motion, and visibility determined by the current slide.
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

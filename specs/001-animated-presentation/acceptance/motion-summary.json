@@ -1,0 +1,98 @@
+{
+  "browser_stats": {
+    "startTime": "2026-10-14T05:48:13.818Z",
+    "duration": 405865.23600000003,
+    "expected": 117,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "opening_projects": [
+    {
+      "project": "chromium-desktop",
+      "firstTitle": 300,
+      "firstAttribution": 949.9999999999999,
+      "firstCue": 1350,
+      "observed": 3516.6,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "chromium-large",
+      "firstTitle": 300,
+      "firstAttribution": 933.3,
+      "firstCue": 1333.3,
+      "observed": 3516.5,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "chromium-mobile",
+      "firstTitle": 283.4,
+      "firstAttribution": 933.3,
+      "firstCue": 1333.3,
+      "observed": 3516.6,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "firefox-desktop",
+      "firstTitle": 300.14,
+      "firstAttribution": 950.8200000000002,
+      "firstCue": 1350.3,
+      "observed": 3500.22,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "firefox-large",
+      "firstTitle": 300.08000000000004,
+      "firstAttribution": 949.5999999999999,
+      "firstCue": 1350.18,
+      "observed": 3500.14,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "firefox-mobile",
+      "firstTitle": 299.76,
+      "firstAttribution": 950,
+      "firstCue": 1350.1000000000001,
+      "observed": 3500.06,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "webkit-desktop",
+      "firstTitle": 266,
+      "firstAttribution": 910,
+      "firstCue": 1296,
+      "observed": 3505,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "webkit-large",
+      "firstTitle": 261,
+      "firstAttribution": 889,
+      "firstCue": 1300,
+      "observed": 3508,
+      "stalls": 0,
+      "smooth": 1
+    },
+    {
+      "project": "webkit-mobile",
+      "firstTitle": 266,
+      "firstAttribution": 910,
+      "firstCue": 1316,
+      "observed": 3509,
+      "stalls": 0,
+      "smooth": 1
+    }
+  ],
+  "transition_paths_sampled": 36,
+  "observed_ms": 47849.22,
+  "stalled_ms": 1650,
+  "smooth_percent": 96.5516679268753,
+  "max_visible_adjacent_y_delta_px": 40.12220001220703
+}

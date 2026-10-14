@@ -1,0 +1,316 @@
+.presentation {
+  --ink: #173832;
+  --paper: #f4f2e9;
+  --accent: #d5e96e;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  overflow-x: clip;
+}
+.stage {
+  position: relative;
+}
+.scene {
+  min-height: 100svh;
+  padding: 12vh 8vw;
+  position: relative;
+  box-sizing: border-box;
+}
+.titleScene {
+  display: flex;
+  align-items: center;
+}
+.titleTravel {
+  width: 100%;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  margin-bottom: 36px;
+}
+.titleScene h1 {
+  font-size: clamp(36px, 5.2vw, 90px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.5;
+  max-width: 1100px;
+  text-wrap: balance;
+  margin: 0;
+}
+.attribution {
+  display: flex;
+  gap: 32px;
+  font-size: 15px;
+  letter-spacing: 0.025em;
+  margin-top: 36px;
+}
+.attribution time {
+  color: #637970;
+}
+.cue {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 5;
+  pointer-events: none;
+  color: var(--ink);
+}
+.cue span {
+  writing-mode: vertical-rl;
+  font:
+    11px/1.5 Arial,
+    sans-serif;
+  letter-spacing: 0.15em;
+}
+.cue [data-cue-bob] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.presentation[data-mode='pinned'] .stage {
+  height: 100vh;
+}
+.presentation[data-mode='pinned'] .scene {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.presentation[data-mode='pinned'] .teachingGroup {
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 700px) {
+  .scene {
+    padding: 12vh 7vw 14vh;
+  }
+  .titleScene h1 {
+    font-size: 40px;
+    line-height: 1.65;
+  }
+  .attribution {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+  }
+  .cue {
+    right: 12px;
+    bottom: 20px;
+  }
+}
+.teachingText {
+  max-width: 620px;
+}
+.teachingText h2 {
+  font-size: clamp(30px, 3.3vw, 58px);
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+  text-wrap: balance;
+}
+.explanation {
+  font-size: clamp(17px, 1.5vw, 25px);
+  line-height: 2.1;
+  margin: 18px 0;
+}
+.principles p {
+  font-weight: 700;
+  font-size: clamp(36px, 4.2vw, 72px);
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+  margin: 18px 0;
+}
+.principles p:nth-child(2) {
+  color: #668345;
+}
+.examples {
+  position: sticky;
+  top: 24px;
+  height: 280px;
+  max-width: 500px;
+  margin: 0 auto;
+  isolation: isolate;
+  background: var(--paper);
+}
+.exampleLayout {
+  position: absolute;
+  width: 78%;
+  left: 5%;
+  top: 0;
+  transform: rotate(var(--rotation));
+}
+.exampleLayout:nth-child(2) {
+  left: 20%;
+  top: 70px;
+}
+.miniSlide {
+  aspect-ratio: 16/10;
+  border-radius: 4px;
+  box-shadow: 0 16px 35px #17383220;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.miniDark {
+  background: #173832;
+  color: #eff5d9;
+}
+.miniLight {
+  background: #d5e96e;
+  color: #173832;
+}
+.miniLabel {
+  font:
+    8px/1.5 Arial,
+    sans-serif;
+  letter-spacing: 0.16em;
+}
+.miniSlide strong {
+  font-size: clamp(19px, 2vw, 34px);
+  line-height: 1.6;
+  letter-spacing: -0.035em;
+}
+.miniRule {
+  height: 2px;
+  width: 34px;
+  background: #d5e96e;
+}
+.miniFoot {
+  font-size: 8px;
+}
+.miniPoints {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-top: auto;
+  font-size: clamp(8px, 0.75vw, 13px);
+  line-height: 2.2;
+}
+.presentation[data-mode='pinned'] .teachingText,
+.presentation[data-mode='pinned'] .principles {
+  width: 52%;
+}
+.presentation[data-mode='pinned'] .examples {
+  position: absolute;
+  left: 59%;
+  top: 26%;
+  width: 35%;
+  height: 58%;
+  max-width: none;
+  background: transparent;
+  margin: 0;
+}
+.presentation[data-mode='pinned'] .exampleLayout:nth-child(2) {
+  top: 140px;
+}
+.presentation[data-mode='flow'] [data-scene='principles'] {
+  padding-top: 340px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .exampleLayout {
+    transform: none;
+  }
+}
+@media (max-width: 700px) {
+  .teachingText h2 {
+    font-size: 32px;
+  }
+  .explanation {
+    font-size: 17px;
+  }
+  .principles p {
+    font-size: 43px;
+  }
+  .examples {
+    height: 240px;
+    margin: 0 7vw;
+  }
+  .miniSlide {
+    gap: 10px;
+  }
+  .miniSlide strong {
+    font-size: 22px;
+  }
+}
+.tipsTravel {
+  width: 100%;
+}
+.tipsTravel h2 {
+  font-size: clamp(34px, 3.5vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  margin: 0 0 26px;
+}
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fffef8;
+  box-shadow: 0 6px 18px #1738320c;
+  border: 1px solid #17383212;
+}
+.card h3 {
+  font-size: clamp(16px, 1.4vw, 24px);
+  font-weight: 600;
+  line-height: 1.65;
+  padding: 16px 20px;
+  background: #e5ead7;
+  min-height: 94px;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.card h3 span {
+  font:
+    12px/1.5 Arial,
+    sans-serif;
+  color: #76875e;
+}
+.card p {
+  font-size: clamp(14px, 1.15vw, 20px);
+  line-height: 1.85;
+  padding: 16px 20px;
+  margin: 0;
+}
+@media (max-width: 1023px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card h3 {
+    min-height: 0;
+    padding: 20px;
+  }
+  .card p {
+    padding: 20px;
+  }
+  .tipsTravel h2 {
+    margin-bottom: 32px;
+  }
+}
