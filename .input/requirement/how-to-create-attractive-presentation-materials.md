@@ -88,3 +88,8 @@ This feature implements presentation which incorporates smooth animations and in
     - title: 示したポイント間で内容を被らせない, content: 内容が重複すると，オーバーに表現しようとしていると見えることがある
 - When transitioning to this fourth slide, the scroll indicator should smoothly fade out.
   - The fade out should use smooth easing functions, such as `ease-in-out`.
+
+## Scroll back
+
+- When user scrolls back to the previous slide, the current slide should smoothly fade out and slide down, and the animations of the previous slide should be restored smoothly.
+  - The transition should use smooth easing functions, such as `ease-in-out`.
