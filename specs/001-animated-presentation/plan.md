@@ -93,6 +93,7 @@ playwright.config.ts
 .prettierignore
 tests/
 ├── unit/
+│   ├── type-contracts.test.ts # Compiler-backed valid/invalid consumer fixtures
 │   ├── content.test.ts
 │   ├── scroll-model.test.ts
 │   ├── presentation.test.tsx
@@ -136,7 +137,7 @@ Reduced-motion mode uses unpinned document flow and immediately visible content,
 
 ## Implementation and Validation Strategy
 
-1. Set up the absent test/style/icon tooling and planned scripts. Add tests for enforcement and coverage checks; normalize scaffold typing/documentation needed for global quality gates without adding unrelated behavior.
+1. Set up the absent test/style/icon tooling and planned scripts. Add tests for enforcement and coverage checks; normalize scaffold typing/documentation needed for global quality gates without adding unrelated behavior. Before creating foundational entity/runtime types, write and observe a failing compiler-backed contract assertion using test-only in-memory fixtures; then require valid/invalid consumer fixtures to pass against the actual production module before mapping tests or user-story work. Missing imports/toolchain errors are not acceptable red evidence.
 2. Write failing content/route/component tests before the route and immutable content. Confirm failures are missing required behavior, then implement the smallest passing slice.
 3. Write failing scroll-model/controller tests for early-scroll handoff, reverse paths, cue state, shared example lifetime, latest target, and disposal. Implement timeline/controller only after observing red evidence.
 4. Write browser tests before visual integration for ordered entrances, live shared DOM identity, forward/backward movement, mobile reachability, reduced motion, and repeated navigation. Use real GSAP/ScrollTrigger in E2E.
