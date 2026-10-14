@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tooling artifacts
+/dist/
+/playwright-report/
+/test-results/
+*.log
+*.tmp
+*.swp
+Thumbs.db
+.vscode/
+.idea/
